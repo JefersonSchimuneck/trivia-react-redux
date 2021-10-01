@@ -2,7 +2,7 @@
 
 Este projeto foi produzido enquanto eu estudava na [Trybe](https://www.betrybe.com/) e consite em um jogo de Trivia utilizando `React` e `Redux`. A aplicação pode ser acessada através [deste deploy](sad-booth-b6a258.netlify.app).
 
-Ao acessar o link, o botão de `Jogar` vai estar desabilitado, mas basta que os campos não estejam vazios para que o botão fique dispoível.
+Ao acessar o link, o botão de `Jogar` vai estar desabilitado, mas basta que os campos não estejam vazios para que o botão fique disponível.
 
 <p align="center">
   <img src="public/disabled.png" width="200"/>
