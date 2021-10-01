@@ -6,17 +6,17 @@ import {
   pause as pauseAction,
 } from '../actions';
 
-class Clock extends Component {
+class Timer extends Component {
   componentDidMount() {
-    this.Clock();
+    this.startTimer();
   }
 
   componentWillUnmount() {
-    clearInterval(this.Clock);
+    clearInterval(this.startTimer);
   }
 
-  Clock() {
-    const thousand = 1000;
+  startTimer() {
+    const ONE_SECOND = 1000;
     setInterval(() => {
       const { timer, pause, paused, countDown } = this.props;
       if (timer > 0 && !paused) {
@@ -25,15 +25,11 @@ class Clock extends Component {
       if (timer === 0 && !paused) {
         pause();
       }
-    }, thousand);
-  }
-
-  nextQuestion() {
-    this.Clock();
+    }, ONE_SECOND);
   }
 
   render() {
-    const ten = 10;
+    const TWO_DIGITS = -2;
     const { timer } = this.props;
 
     return (
@@ -42,8 +38,8 @@ class Clock extends Component {
           <h3>Tempo esgotado :- \ </h3>
         ) : (
           <h3>
-            Timer:
-            {timer < ten ? `0${timer}` : timer}
+            {'Timer: '}
+            {(`0${timer}`).slice(TWO_DIGITS)}
           </h3>
         )}
       </div>
@@ -61,15 +57,15 @@ const mapDispatchToProps = (dispatch) => ({
   pause: () => dispatch(pauseAction()),
 });
 
-Clock.propTypes = {
+Timer.propTypes = {
   timer: PropTypes.number,
   countDown: PropTypes.func.isRequired,
   pause: PropTypes.func.isRequired,
   paused: PropTypes.bool.isRequired,
 };
 
-Clock.defaultProps = {
+Timer.defaultProps = {
   timer: null,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Clock);
+export default connect(mapStateToProps, mapDispatchToProps)(Timer);

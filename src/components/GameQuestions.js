@@ -8,7 +8,7 @@ import {
   pause as pauseAction,
   correctAnswer as correctAnswerAction,
 } from '../actions';
-import Clock from './Clock';
+import Timer from './Timer';
 import Loading from './Loading';
 
 class GameQuestions extends React.Component {
@@ -50,7 +50,6 @@ class GameQuestions extends React.Component {
       ? nextQuestion() : this.setState({ redirect: true });
   }
 
-  // Solução de decode do colega Lucas Rodrigues de Castro, postada em thread do slack.
   decodeUtf8(string) {
     const stringUTF = unescape(encodeURIComponent(string));
     return stringUTF.replace(/&quot;|&#039;/gi, '\'');
@@ -146,7 +145,7 @@ class GameQuestions extends React.Component {
                 <div className="answers-container">
                   { this.renderAnswers(questions[currentQuestion].answers) }
                 </div>
-                <Clock />
+                <Timer />
               </>
             )}
         </div>

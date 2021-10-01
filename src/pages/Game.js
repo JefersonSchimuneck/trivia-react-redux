@@ -35,10 +35,10 @@ class Game extends React.Component {
               alt="gratavar perfil"
             />
             <div data-testid="header-player-name" className="player-name">
-              { readInputs.name }
+              { `Player: ${readInputs.name}` }
             </div>
             <div data-testid="header-score" className="score-player">
-              { score }
+              { `Score: ${score}` }
             </div>
           </div>
           <div className="body-player">

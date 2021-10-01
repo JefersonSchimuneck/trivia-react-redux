@@ -27,7 +27,6 @@ const mapStateToProps = (state) => ({
 HeaderFeedback.propTypes = {
   playerInfo: PropTypes.objectOf(PropTypes.any).isRequired,
   gameInfo: PropTypes.objectOf(PropTypes.any).isRequired,
-
 };
 
 export default connect(mapStateToProps)(HeaderFeedback);
